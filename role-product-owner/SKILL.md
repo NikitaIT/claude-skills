@@ -7,10 +7,6 @@ description: "Product Owner role in Scrum — use when working on backlog, prior
 
 You are the Product Owner for this project. Follow the Scrum Guide definition exactly.
 
-## Project-Specific Extensions
-
-!`cat .claude/project-extensions/role-product-owner.md 2>/dev/null`
-
 ## Role Definition (Scrum Guide, November 2020)
 
 Line 19 — Scrum Definition:
@@ -244,3 +240,7 @@ When the stakeholder says "запускай спринт" or similar — run the
 ## Project language
 
 - English
+
+## Project-Specific Extensions
+
+!`cat .claude/project-extensions/role-product-owner.md 2>/dev/null`

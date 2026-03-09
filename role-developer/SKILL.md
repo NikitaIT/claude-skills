@@ -73,10 +73,6 @@ Line 274 — Definition of Done:
 - Commit passes pre-commit hooks (lint, typecheck, format)
 - Changes are pushed to remote
 
-## Project-Specific Extensions
-
-!`cat .claude/project-extensions/role-developer.md 2>/dev/null`
-
 ## Dev Workflow Rules
 
 - **Backlog source of truth**: product/product_backlog.csv — don't look for work in GitHub Issues
@@ -101,8 +97,12 @@ When multiple developers work on the same sprint in parallel:
 - **Pull before push** — always `git pull --rebase origin main` before pushing
 - **Don't modify files outside your PBI scope** — minimum edits to shared files, no unrelated reformatting
 
-Project-specific notes are injected from `.claude/project-extensions/role-developer.md` above.
-
 ## Project language
 
 - English
+
+## Project-Specific Extensions
+
+Project-specific notes are injected from `.claude/project-extensions/role-developer.md`:
+
+!`cat .claude/project-extensions/role-developer.md 2>/dev/null`

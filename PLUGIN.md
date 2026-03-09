@@ -9,4 +9,4 @@ Personal collection of reusable Claude Code skills shared across all repositorie
 
 ## Skills
 
-Skills are in the `skills/` directory. Each skill has its own folder with a `SKILL.md`.
+Skills are in the `.` directory. Each skill has its own folder with a `SKILL.md`.
