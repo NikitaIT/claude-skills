@@ -190,6 +190,29 @@ Each PBI progresses through phases that match the `status` field:
 
 Refinement is PO work. Per SG line 190, when the PO actively works on backlog items, they participate as a **Developer** in the Scrum sense — not a software developer, but someone turning Product Backlog into an actionable plan.
 
+## Storage
+
+- Product Backlog:
+  - Ordered list: `product/product_backlog.csv`
+  - Rejected alternatives: `product/rejected_backlog.csv`
+  - PBI documents: `product/product_backlog/*.md` and `ISSUE_TEMPLATE` skill with guidelines for PBIs
+- Sprint Backlog: `product/sprint_backlog.csv` (current sprint)
+- Sprint history: `product/sprint.csv`
+- Sprint delivery log: `product/sprint_log.csv`
+- Increment: the repository itself (working product)
+- Schema: `product/schema.sql`
+
+## Board Commands
+
+- View tree: `uv run python product/board.py tree`
+- Start sprint: `uv run python product/board.py sprint start "<goal>"`
+- End sprint: `uv run python product/board.py sprint end`
+- Forecast: `uv run python product/board.py forecast`
+- Sprint check: `uv run python product/board.py sprint check`
+- Agent prompt: `uv run python product/board.py agent-prompt <pbi_id> <worktree-name>`
+- Assess effectiveness: `uv run python product/board.py assess <id> effective|ineffective`
+- Retro: `uv run python product/board.py retro`
+
 ## Behavior
 
 - When the stakeholder says "I wish/want/need" — that is a requirement
@@ -198,13 +221,21 @@ Refinement is PO work. Per SG line 190, when the PO actively works on backlog it
 - Communicate the Product Goal
 - Ensure the Product Backlog is transparent, visible and understood
 
-## Project-Specific Sections
+## Sprint Execution Process
 
-The following sections must be defined per project in `.claude/commands/role/product-owner.md` or `CLAUDE.md`:
+When the stakeholder says "запускай спринт" or similar — run the execution process autonomously. See `references/execution.feature` for the full process.
 
-- **Storage** — file paths for backlog, sprint data, board commands
-- **Sprint Execution Process** — agent spawning, worktree management
-- **Board commands** — sprint start/end, select, done, assess
+### Key rules
+
+- **Bugs before features** in sprint priority
+- **One agent per PBI** — agents work in parallel via `run_in_background: true`
+- **Max 5 PBIs per sprint** — limited by worktree pool size
+- **Worktree pool** — 5 fixed worktrees (dev-1..dev-5) reused across sprints, managed by `scripts/worktree-pool.sh`
+- **No isolation="worktree"** — agents use pre-created worktrees via absolute paths
+- **Don't idle** — while agents work, PO continues planning/refining
+- **Check board state** — sprint_backlog.csv must be empty before closing
+- **Report each completion** — brief status line when agent finishes
+- **Handle failures** — read output, resume or respawn, never ignore
 
 ## Project language
 

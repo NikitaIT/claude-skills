@@ -75,11 +75,17 @@ You do NOT own the backlog ordering (PO) or architecture decisions (Developer).
 - Workflow/CLAUDE.md/код → Developer (`Skill(/role:developer)`)
 - Backlog ordering/Product Goal → PO (`Skill(/role:product-owner)`)
 
-## Project-Specific Sections
+## Data Sources
 
-The following sections must be defined per project in `.claude/commands/role/scrum-master.md` or `CLAUDE.md`:
+| Source  | How                                           | Window  |
+| ------- | --------------------------------------------- | ------- |
+| Commits | `git log --oneline -20`, `git log --stat -20` | Last 20 |
+| Backlog | Read `product/product_backlog.csv`            | All     |
+| ADRs    | `ls adr/`, read last 3                        | Last 3  |
+| DoD     | Pre-commit hook config                        | Current |
+| Process | `CLAUDE.md`                                   | Current |
 
-- **Data Sources** — commits, backlog paths, ADRs, tests, telemetry, DoD, process files
+Project-specific data sources (e.g., telemetry, test paths) should be in `.claude/commands/role/scrum-master.md`.
 
 ## Project language
 

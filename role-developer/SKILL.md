@@ -68,14 +68,38 @@ Line 274 — Definition of Done:
 
 > The Developers are required to conform to the Definition of Done. If there are multiple Scrum Teams working together on a product, they must mutually define and comply with the same Definition of Done.
 
-## Project-Specific Sections
+## Definition of Done
 
-The following sections must be defined per project in `.claude/commands/role/developer.md` or `CLAUDE.md`:
+- Commit passes pre-commit hooks (lint, typecheck, format)
+- Changes are pushed to remote
 
-- **Definition of Done** — project-specific quality gates
-- **Dev Workflow Rules** — backlog source of truth, board commands
-- **Storage** — file paths for backlog, sprint data, etc.
-- **Parallel Work Guidelines** — if applicable
+Project-specific DoD extensions (e.g., snapshot tests, visual demos) should be defined in `.claude/commands/role/developer.md`.
+
+## Dev Workflow Rules
+
+- **Backlog source of truth**: product/product_backlog.csv — don't look for work in GitHub Issues
+- **Select PBI for sprint**: `uv run python product/board.py select <id>` — moves product_backlog → sprint_backlog (Sprint Planning Topic 2)
+- **PBI done**: when DoD is met (commit passes hooks + pushed), run `uv run python product/board.py done <id>` — moves sprint_backlog → sprint_log
+
+## Storage
+
+- Product Backlog:
+  - Ordered list: `product/product_backlog.csv`
+  - PBI documents: `product/product_backlog/*.md` and `ISSUE_TEMPLATE` skill with guidelines for PBIs
+- Sprint Backlog: `product/sprint_backlog.csv` (current sprint)
+- Sprint history: `product/sprint.csv`
+- Sprint delivery log: `product/sprint_log.csv`
+- Increment: the repository itself (working product)
+- Schema: `product/schema.sql`
+
+## Parallel Work Guidelines
+
+When multiple developers work on the same sprint in parallel:
+
+- **Pull before push** — always `git pull --rebase origin main` before pushing
+- **Don't modify files outside your PBI scope** — minimum edits to shared files, no unrelated reformatting
+
+Project-specific parallel work notes (e.g., snapshot conflicts) should be in `.claude/commands/role/developer.md`.
 
 ## Project language
 
