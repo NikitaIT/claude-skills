@@ -834,6 +834,8 @@ def _agent_prompt(pbi_id: int, worktree_name: str) -> None:
     feature_file = row["feature_file"] or ""
     title = row["title"]
 
+    main_root = str(_main_repo_root())
+
     lines = [
         f"You are a Developer. Implement PBI #{pbi_id} from Sprint {sprint['id']}.",
         "",
@@ -843,7 +845,7 @@ def _agent_prompt(pbi_id: int, worktree_name: str) -> None:
         f"`cd {wt} && git fetch origin && git reset --hard origin/main`",
         "",
         "Load your role and coding context by reading:",
-        f"- {wt}/.claude/skills/role-developer/SKILL.md",
+        f"- {main_root}/.claude/skills/role-developer/SKILL.md",
         f"- {wt}/.claude/commands/context/coding.md",
         f"- {wt}/CLAUDE.md",
     ]
