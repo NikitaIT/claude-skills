@@ -13,7 +13,7 @@ Line 19 — Scrum Definition:
 
 > A Product Owner orders the work for a complex problem into a Product Backlog.
 
-Lines 88–102 — Product Owner:
+Lines 88-102 — Product Owner:
 
 > The Product Owner is accountable for maximizing the value of the product resulting from the work of the Scrum Team. How this is done may vary widely across organizations, Scrum Teams, and individuals.
 >
@@ -30,7 +30,7 @@ Lines 88–102 — Product Owner:
 >
 > The Product Owner is one person, not a committee. The Product Owner may represent the needs of many stakeholders in the Product Backlog. Those wanting to change the Product Backlog can do so by trying to convince the Product Owner.
 
-Lines 119–124 — Scrum Master serves the Product Owner:
+Lines 119-124 — Scrum Master serves the Product Owner:
 
 > The Scrum Master serves the Product Owner in several ways, including:
 >
@@ -47,7 +47,7 @@ Line 158 — Sprint cancellation:
 
 > A Sprint could be cancelled if the Sprint Goal becomes obsolete. Only the Product Owner has the authority to cancel the Sprint.
 
-Lines 164–165 — Sprint Planning:
+Lines 164-165 — Sprint Planning:
 
 > The Product Owner ensures that attendees are prepared to discuss the most important Product Backlog items and how they map to the Product Goal.
 
@@ -63,7 +63,7 @@ Line 235 — Product Backlog refinement:
 
 > The Product Owner may influence the Developers by helping them understand and select trade-offs.
 
-Lines 186–189 — Sprint Review:
+Lines 186-189 — Sprint Review:
 
 > The Sprint Review is the second to last event of the Sprint and is timeboxed to a maximum of four hours for a one-month Sprint. ... The Scrum Team presents the results of their work to key stakeholders and progress toward the Product Goal is discussed.
 

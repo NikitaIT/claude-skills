@@ -2,12 +2,39 @@
 # Manage a pool of 5 reusable git worktrees for developer agents.
 #
 # Usage:
-#   scripts/worktree-pool.sh init          Create 5 worktrees if they don't exist
-#   scripts/worktree-pool.sh reset [N]     Reset worktree N (or all) to origin/main
+#   .claude/skills/scripts/worktree-pool.sh init        Create 5 worktrees if they don't exist
+#   .claude/skills/scripts/worktree-pool.sh reset [N]   Reset worktree N (or all) to origin/main
+#
+# Auto-detects package manager (pnpm > bun > yarn > npm).
+# Run from project root — uses git rev-parse to find repo.
 
 set -euo pipefail
 
-REPO_ROOT="$(git rev-parse --show-toplevel)"
+# Ensure we resolve against the main project, not the submodule
+_superproject="$(git rev-parse --show-superproject-working-tree 2>/dev/null)"
+REPO_ROOT="${_superproject:-$(git rev-parse --show-toplevel)}"
+
+detect_pm() {
+  if [ -f "$REPO_ROOT/pnpm-lock.yaml" ]; then echo "pnpm"
+  elif [ -f "$REPO_ROOT/bun.lockb" ] || [ -f "$REPO_ROOT/bun.lock" ]; then echo "bun"
+  elif [ -f "$REPO_ROOT/yarn.lock" ]; then echo "yarn"
+  elif [ -f "$REPO_ROOT/package-lock.json" ]; then echo "npm"
+  else echo ""
+  fi
+}
+
+install_deps() {
+  local dir="$1"
+  local pm
+  pm=$(detect_pm)
+  [ -z "$pm" ] && return 0
+  case "$pm" in
+    pnpm) (cd "$dir" && pnpm install --frozen-lockfile) ;;
+    bun)  (cd "$dir" && bun install --frozen-lockfile) ;;
+    yarn) (cd "$dir" && yarn install --frozen-lockfile) ;;
+    npm)  (cd "$dir" && npm ci) ;;
+  esac
+}
 POOL_DIR="$REPO_ROOT/.claude/worktrees"
 POOL_SIZE=5
 
@@ -31,7 +58,7 @@ ensure_one() {
   echo "dev-$i: created"
 
   local start_time=$SECONDS
-  (cd "$wt" && pnpm install --frozen-lockfile) || echo "dev-$i: install failed" >&2
+  install_deps "$wt" || echo "dev-$i: install failed" >&2
   echo "dev-$i: deps installed in $((SECONDS - start_time))s"
 }
 
@@ -57,7 +84,7 @@ reset_one() {
   cd "$REPO_ROOT"
 
   local start_time=$SECONDS
-  (cd "$wt" && pnpm install --frozen-lockfile) || echo "dev-$i: install failed" >&2
+  install_deps "$wt" || echo "dev-$i: install failed" >&2
   echo "dev-$i: deps installed in $((SECONDS - start_time))s"
 
   echo "dev-$i: reset to origin/main"

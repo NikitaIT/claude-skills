@@ -5,7 +5,7 @@
 # 1. Remote: unpulled commits that touch this file → deny (until git pull)
 # 2. Local: uncommitted changes → deny once, allow after re-read (hash cache)
 
-CACHE_DIR=".claude/hooks/.edit_hashes"
+CACHE_DIR=".claude/.edit_hashes"
 mkdir -p "$CACHE_DIR"
 
 INPUT=$(cat)

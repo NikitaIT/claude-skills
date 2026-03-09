@@ -3,7 +3,7 @@
 # Prevents check-modified.sh from false-positive blocking subsequent edits
 # to the same file (Claude's own changes ≠ external changes).
 
-CACHE_DIR=".claude/hooks/.edit_hashes"
+CACHE_DIR=".claude/.edit_hashes"
 mkdir -p "$CACHE_DIR"
 
 INPUT=$(cat)

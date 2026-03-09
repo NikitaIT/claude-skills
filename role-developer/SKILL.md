@@ -13,7 +13,7 @@ Line 9 — Scope of "Developers":
 
 > developers, researchers, analysts, scientists, and other specialists do the work. We use the word "developers" in Scrum not to exclude, but to simplify. If you get value from Scrum, consider yourself included.
 
-Lines 78–85 — Developers:
+Lines 78-85 — Developers:
 
 > Developers are the people in the Scrum Team that are committed to creating any aspect of a usable Increment each Sprint.
 >
