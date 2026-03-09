@@ -1,5 +1,5 @@
 ---
-name: "role:scrum-master"
+name: "role-scrum-master"
 description: "Scrum Master role — use when discussing process, impediments, effectiveness, retrospective, Definition of Done, team agreements, or workflow improvements. Activates the SM accountability as defined in the Scrum Guide. The SM owns process but delegates artifact changes to competent roles."
 ---
 

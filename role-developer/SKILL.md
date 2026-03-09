@@ -1,5 +1,5 @@
 ---
-name: "role:developer"
+name: "role-developer"
 description: "Developer role in Scrum — use when working on code, implementation, tests, bugs, architecture, or refactoring. Activates the Developer accountability as defined in the Scrum Guide. Always load together with project-specific coding context."
 ---
 

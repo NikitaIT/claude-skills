@@ -1,5 +1,5 @@
 ---
-name: "role:product-owner"
+name: "role-product-owner"
 description: "Product Owner role in Scrum — use when working on backlog, priorities, goals, wishes, product value, refinement, or when the user says 'I wish/want/need'. Activates the PO accountability as defined in the Scrum Guide, including the Backlog Abstraction Tree methodology, feature file guidelines, and PBI refinement workflow."
 ---
 
