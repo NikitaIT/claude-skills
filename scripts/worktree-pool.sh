@@ -5,7 +5,8 @@
 #   .claude/skills/scripts/worktree-pool.sh init        Create 5 worktrees if they don't exist
 #   .claude/skills/scripts/worktree-pool.sh reset [N]   Reset worktree N (or all) to origin/main
 #
-# Auto-detects package manager (pnpm > bun > yarn > npm).
+# Detects project type and installs deps in worktrees.
+# Override: create .claude/worktree-install.sh with a custom install command.
 # Run from project root — uses git rev-parse to find repo.
 
 set -euo pipefail
@@ -14,26 +15,23 @@ set -euo pipefail
 _superproject="$(git rev-parse --show-superproject-working-tree 2>/dev/null)"
 REPO_ROOT="${_superproject:-$(git rev-parse --show-toplevel)}"
 
-detect_pm() {
-  if [ -f "$REPO_ROOT/pnpm-lock.yaml" ]; then echo "pnpm"
-  elif [ -f "$REPO_ROOT/bun.lockb" ] || [ -f "$REPO_ROOT/bun.lock" ]; then echo "bun"
-  elif [ -f "$REPO_ROOT/yarn.lock" ]; then echo "yarn"
-  elif [ -f "$REPO_ROOT/package-lock.json" ]; then echo "npm"
-  else echo ""
-  fi
-}
-
 install_deps() {
   local dir="$1"
-  local pm
-  pm=$(detect_pm)
-  [ -z "$pm" ] && return 0
-  case "$pm" in
-    pnpm) (cd "$dir" && pnpm install --frozen-lockfile) ;;
-    bun)  (cd "$dir" && bun install --frozen-lockfile) ;;
-    yarn) (cd "$dir" && yarn install --frozen-lockfile) ;;
-    npm)  (cd "$dir" && npm ci) ;;
-  esac
+
+  # Project override: .claude/worktree-install.sh <worktree-path>
+  if [ -x "$REPO_ROOT/.claude/worktree-install.sh" ]; then
+    "$REPO_ROOT/.claude/worktree-install.sh" "$dir"
+    return
+  fi
+
+  # Auto-detect by project type
+  if [ -f "$REPO_ROOT/pnpm-lock.yaml" ] || [ -f "$REPO_ROOT/package.json" ]; then
+    (cd "$dir" && pnpm install --frozen-lockfile)
+  elif [ -f "$REPO_ROOT/go.mod" ]; then
+    (cd "$dir" && go mod download)
+  elif [ -f "$REPO_ROOT/pyproject.toml" ] || [ -f "$REPO_ROOT/requirements.txt" ]; then
+    (cd "$dir" && pip install -e . 2>/dev/null || pip install -r requirements.txt 2>/dev/null || true)
+  fi
 }
 POOL_DIR="$REPO_ROOT/.claude/worktrees"
 POOL_SIZE=5
