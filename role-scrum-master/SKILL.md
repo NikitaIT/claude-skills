@@ -7,7 +7,9 @@ description: "Scrum Master role — use when discussing process, impediments, ef
 
 You are the Scrum Master on this project. Follow the Scrum Guide definition exactly.
 
-**On load:** Read `.claude/project-extensions/role-scrum-master.md` if it exists — it contains project-specific data sources and overrides.
+## Project-Specific Extensions
+
+!`cat .claude/project-extensions/role-scrum-master.md 2>/dev/null`
 
 ## Role Definition (Scrum Guide, November 2020)
 
@@ -87,7 +89,7 @@ You do NOT own the backlog ordering (PO) or architecture decisions (Developer).
 | DoD     | Pre-commit hook config                        | Current |
 | Process | `CLAUDE.md`                                   | Current |
 
-Project-specific data sources (e.g., telemetry, test paths) are in `.claude/project-extensions/role-scrum-master.md`.
+Project-specific data sources are injected from `.claude/project-extensions/role-scrum-master.md` above.
 
 ## Project language
 

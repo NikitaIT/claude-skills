@@ -73,7 +73,9 @@ Line 274 — Definition of Done:
 - Commit passes pre-commit hooks (lint, typecheck, format)
 - Changes are pushed to remote
 
-**On load:** Read `.claude/project-extensions/role-developer.md` if it exists — it contains project-specific DoD extensions, parallel work notes, and other overrides.
+## Project-Specific Extensions
+
+!`cat .claude/project-extensions/role-developer.md 2>/dev/null`
 
 ## Dev Workflow Rules
 
@@ -99,7 +101,7 @@ When multiple developers work on the same sprint in parallel:
 - **Pull before push** — always `git pull --rebase origin main` before pushing
 - **Don't modify files outside your PBI scope** — minimum edits to shared files, no unrelated reformatting
 
-Project-specific notes (e.g., snapshot conflicts) are in `.claude/project-extensions/role-developer.md`.
+Project-specific notes are injected from `.claude/project-extensions/role-developer.md` above.
 
 ## Project language
 
