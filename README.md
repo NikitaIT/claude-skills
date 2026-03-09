@@ -14,31 +14,34 @@ Claude Code auto-discovers skills from `.claude/skills/<name>/SKILL.md`.
 
 ## Structure
 
-```
+```sh
 .claude/skills/               # ← submodule root
 ├── role-developer/SKILL.md    # Developer role (Scrum + product/ framework)
 ├── role-product-owner/SKILL.md # PO role (BAT, refinement, sprint execution)
 ├── role-scrum-master/SKILL.md # SM role (process, DoD, delegation)
 ├── scrum-guide/SKILL.md       # Scrum Guide, November 2020
 ├── issue-template/SKILL.md    # Issue refinement workflow (Describe → Design)
-└── hooks/                     # Reusable Claude Code hooks
-    ├── git-sync.sh            # SessionStart: auto-pull remote
-    ├── check-outside-project.sh # PreToolUse(Bash): block writes outside repo
-    ├── check-modified.sh      # PreToolUse(Edit|Write): deny if externally modified
-    └── update-hash-cache.sh   # PostToolUse(Edit|Write): track Claude's edits
+├── hooks/                     # Reusable Claude Code hooks
+│   ├── git-sync.sh            # SessionStart: auto-pull remote
+│   ├── check-outside-project.sh # PreToolUse(Bash): block writes outside repo
+│   ├── check-modified.sh      # PreToolUse(Edit|Write): deny if externally modified
+│   └── update-hash-cache.sh   # PostToolUse(Edit|Write): track Claude's edits
+└── scripts/                   # Product management scripts
+    ├── worktree-pool.sh       # Manage 5 reusable worktrees for parallel agents
+    └── lint-backlog-words.sh  # Lint backlog CSV for forbidden implementation words
 ```
 
 ## Project-Specific Extensions
 
 Role skills inject project-specific content at load time via:
 
-```
+```sh
 !`cat .claude/project-extensions/role-<name>.md 2>/dev/null`
 ```
 
 Create `.claude/project-extensions/` in your project to override or extend any role:
 
-```
+```sh
 your-project/
 ├── .claude/
 │   ├── skills/                  # ← this submodule

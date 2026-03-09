@@ -230,7 +230,7 @@ When the stakeholder says "запускай спринт" or similar — run the
 - **Bugs before features** in sprint priority
 - **One agent per PBI** — agents work in parallel via `run_in_background: true`
 - **Max 5 PBIs per sprint** — limited by worktree pool size
-- **Worktree pool** — 5 fixed worktrees (dev-1..dev-5) reused across sprints, managed by `scripts/worktree-pool.sh`
+- **Worktree pool** — 5 fixed worktrees (dev-1..dev-5) reused across sprints, managed by `.claude/skills/scripts/worktree-pool.sh`
 - **No isolation="worktree"** — agents use pre-created worktrees via absolute paths
 - **Don't idle** — while agents work, PO continues planning/refining
 - **Check board state** — sprint_backlog.csv must be empty before closing

@@ -44,7 +44,7 @@ Feature: Sprint execution
     Scenario: Spawn developer agents (batch of up to 5)
       Given all gates passed
       When agents are ready to be spawned
-      Then run: scripts/worktree-pool.sh init
+      Then run: .claude/skills/scripts/worktree-pool.sh init
       And take the next batch of up to 5 unstarted PBIs from the sprint
       And assign one worktree (dev-1..dev-5) per PBI
       And generate prompt: uv run python product/board.py agent-prompt <pbi_id> <dev-N>
