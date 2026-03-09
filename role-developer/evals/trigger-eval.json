@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Реализуй PBI-42 — нужно добавить валидацию email в форме профиля, feature file уже готов в product/product_backlog/42.md",
+    "should_trigger": true
+  },
+  {
+    "query": "Добавь unit тесты для компонента ScaleChart в src/components/, покрытие сейчас 0%",
+    "should_trigger": true
+  },
+  {
+    "query": "В sprint_backlog.csv есть PBI-15, выбери его через board.py select и начни имплементацию",
+    "should_trigger": true
+  },
+  {
+    "query": "Почини баг: при клике на ось Y шкала сбрасывается, воспроизводится в Chrome 120, ошибка в консоли TypeError в scale-viewer.ts:87",
+    "should_trigger": true
+  },
+  {
+    "query": "Отрефактори модуль product/board.py — там дублируется логика парсинга CSV в трёх функциях, вынеси в общий helper",
+    "should_trigger": true
+  },
+  {
+    "query": "Запусти pre-commit hooks, проверь что lint и typecheck проходят, потом сделай git push",
+    "should_trigger": true
+  },
+  {
+    "query": "Декомпозируй PBI-33 на подзадачи не больше одного дня каждая, чтобы можно было трекать прогресс на Daily Scrum",
+    "should_trigger": true
+  },
+  {
+    "query": "Обнови schema.sql — нужно добавить колонку effective_date в таблицу sprint_log, и мигрировать данные",
+    "should_trigger": true
+  },
+  {
+    "query": "Сделай snapshot тест для компонента с тегом @visual, как описано в Definition of Done",
+    "should_trigger": true
+  },
+  {
+    "query": "Архитектурно: стоит ли использовать Zustand вместо Context API для state management? Запиши решение в ADR",
+    "should_trigger": true
+  },
+  {
+    "query": "Я хочу чтобы пользователь мог экспортировать диаграмму в PDF — добавь это в бэклог",
+    "should_trigger": false
+  },
+  {
+    "query": "Переупорядочь product_backlog.csv — PBI-12 должен быть выше PBI-8, потому что он приносит больше value",
+    "should_trigger": false
+  },
+  {
+    "query": "Что говорит Scrum Guide про то, кто отвечает за sizing Product Backlog items?",
+    "should_trigger": false
+  },
+  {
+    "query": "Наша ретроспектива показала что мы тратим много времени на code review — как улучшить процесс?",
+    "should_trigger": false
+  },
+  {
+    "query": "Опиши проблему для PBI-22: пользователи жалуются что шкала не читается на мобильных устройствах, нужно заполнить секцию Problem",
+    "should_trigger": false
+  },
+  {
+    "query": "Сформулируй Product Goal на следующий квартал, учитывая что основной фокус — accessibility",
+    "should_trigger": false
+  },
+  {
+    "query": "Создай decision matrix для PBI-18: сравни три подхода к реализации — SVG, Canvas, WebGL",
+    "should_trigger": false
+  },
+  {
+    "query": "Как устроен Sprint Review по Scrum Guide? Какой у него timebox?",
+    "should_trigger": false
+  },
+  {
+    "query": "У нас impediment: CI pipeline падает из-за flaky тестов, это блокирует весь спринт. Как устранить?",
+    "should_trigger": false
+  },
+  {
+    "query": "Напиши feature file для PBI-30 с acceptance criteria — пользователь должен видеть историю изменений профиля",
+    "should_trigger": false
+  }
+]

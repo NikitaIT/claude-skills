@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Я хочу чтобы пользователь мог сравнивать два профиля side-by-side на одной диаграмме",
+    "should_trigger": true
+  },
+  {
+    "query": "Переупорядочь бэклог: PBI-12 важнее PBI-8, потому что больше пользователей просили эту фичу",
+    "should_trigger": true
+  },
+  {
+    "query": "Сформулируй Product Goal на следующий квартал — фокус на accessibility и mobile experience",
+    "should_trigger": true
+  },
+  {
+    "query": "Мне нужна возможность шарить результаты оценки по ссылке — добавь в product_backlog.csv",
+    "should_trigger": true
+  },
+  {
+    "query": "Запускай спринт — бэклог готов, PBI отрефайнены, Definition of Ready выполнен",
+    "should_trigger": true
+  },
+  {
+    "query": "Проверь backlog tree через board.py tree — все ли PBI привязаны к верхнеуровневым I wish?",
+    "should_trigger": true
+  },
+  {
+    "query": "PBI-25 неэффективен после деплоя — пользователи не используют фичу. Отметь через board.py assess как ineffective",
+    "should_trigger": true
+  },
+  {
+    "query": "Я вижу что на экране оценки слишком много информации — нужно убрать дублирование данных согласно Definition of Ready",
+    "should_trigger": true
+  },
+  {
+    "query": "Напиши feature file для PBI-30: пользователь должен видеть историю изменений профиля, без привязки к конкретным UI элементам",
+    "should_trigger": true
+  },
+  {
+    "query": "Пользователи просят тёмную тему — это I wish или I may? Куда в дереве поместить?",
+    "should_trigger": true
+  },
+  {
+    "query": "Реализуй PBI-42 из sprint_backlog — добавь валидацию email в форме профиля",
+    "should_trigger": false
+  },
+  {
+    "query": "Что говорит Scrum Guide о роли Product Owner? Какие у него обязанности?",
+    "should_trigger": false
+  },
+  {
+    "query": "Наша velocity падает третий спринт подряд — нужно провести ретроспективу и найти root cause",
+    "should_trigger": false
+  },
+  {
+    "query": "Заполни секцию Problem для PBI-22 по шаблону issue template: перечисли гипотезы и сузь до одной",
+    "should_trigger": false
+  },
+  {
+    "query": "Добавь unit тесты для scale-viewer.ts, покрытие ниже 50%",
+    "should_trigger": false
+  },
+  {
+    "query": "Как правильно проводить Sprint Planning по Scrum Guide? Какие три topic?",
+    "should_trigger": false
+  },
+  {
+    "query": "У нас impediment: деплой занимает 40 минут, это тормозит delivery. Как решить?",
+    "should_trigger": false
+  },
+  {
+    "query": "Отрефактори CSS модули — слишком много дублирования в стилях компонентов",
+    "should_trigger": false
+  },
+  {
+    "query": "Обнови Definition of Done — добавь требование по accessibility audit перед мержем",
+    "should_trigger": false
+  },
+  {
+    "query": "Создай approach decision matrix для PBI-18 по шаблону issue-template: SVG vs Canvas vs WebGL",
+    "should_trigger": false
+  }
+]

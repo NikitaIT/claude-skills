@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Заполни секцию Describe для PBI-22: пользователи жалуются что шкала не читается на мобильных, нужно зафиксировать симптомы",
+    "should_trigger": true
+  },
+  {
+    "query": "Сформулируй Problem для PBI-15: есть три гипотезы почему графики тормозят — сузь до одной",
+    "should_trigger": true
+  },
+  {
+    "query": "Создай decision matrix в секции Approach для PBI-18: сравни SVG vs Canvas vs WebGL по перформансу и accessibility",
+    "should_trigger": true
+  },
+  {
+    "query": "Заполни секцию Design для PBI-33: нужен пошаговый план имплементации с design DM",
+    "should_trigger": true
+  },
+  {
+    "query": "PBI-25 задеплоен — проведи assessment: фича эффективна или нет? Пользователи используют?",
+    "should_trigger": true
+  },
+  {
+    "query": "Создай новый PBI по шаблону: опиши ситуацию — на странице оценки нет индикатора загрузки, пользователи думают что приложение зависло",
+    "should_trigger": true
+  },
+  {
+    "query": "Переведи PBI-12 из describe в problem — симптомы уже описаны, нужно выделить корневую причину",
+    "should_trigger": true
+  },
+  {
+    "query": "Заполни approach для PBI-40: нужно решить — модифицировать текущий компонент или создать новый? Lib или app?",
+    "should_trigger": true
+  },
+  {
+    "query": "PBI-19 оказался неэффективным — keyword нужно поменять с 'I must' на 'I must not'. Обнови assessment",
+    "should_trigger": true
+  },
+  {
+    "query": "У PBI-28 секция Problem слишком большая — сформулируй в один абзац, как требует шаблон",
+    "should_trigger": true
+  },
+  {
+    "query": "Реализуй PBI-42: напиши код валидации email в src/components/ProfileForm.tsx",
+    "should_trigger": false
+  },
+  {
+    "query": "Я хочу чтобы пользователь мог шарить профиль по ссылке — это мой wish, добавь в бэклог",
+    "should_trigger": false
+  },
+  {
+    "query": "Что говорит Scrum Guide про Product Backlog refinement? Кто за него отвечает?",
+    "should_trigger": false
+  },
+  {
+    "query": "Velocity падает — нужна ретроспектива чтобы понять что пошло не так в процессе",
+    "should_trigger": false
+  },
+  {
+    "query": "Переупорядочь бэклог: PBI с accessibility важнее чем PBI с экспортом",
+    "should_trigger": false
+  },
+  {
+    "query": "Обнови Definition of Done — добавь обязательный accessibility audit",
+    "should_trigger": false
+  },
+  {
+    "query": "Проверь backlog tree через board.py tree — все ли I wish покрыты?",
+    "should_trigger": false
+  },
+  {
+    "query": "Добавь snapshot тест для ScaleChart — это часть Definition of Done для @visual тегов",
+    "should_trigger": false
+  },
+  {
+    "query": "У нас impediment: деплой занимает слишком долго, команда простаивает",
+    "should_trigger": false
+  },
+  {
+    "query": "Запускай спринт — PBI готовы, Definition of Ready выполнен, бэклог упорядочен",
+    "should_trigger": false
+  }
+]

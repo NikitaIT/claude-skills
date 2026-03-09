@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Что говорит Scrum Guide про Sprint Retrospective? Какой timebox и какая цель этого события?",
+    "should_trigger": true
+  },
+  {
+    "query": "Как в Scrum Guide определяется Increment? Может ли Increment быть доставлен до окончания спринта?",
+    "should_trigger": true
+  },
+  {
+    "query": "Сколько людей должно быть в Scrum Team по Scrum Guide? Есть ли ограничения?",
+    "should_trigger": true
+  },
+  {
+    "query": "Какие три topic обсуждаются на Sprint Planning согласно Scrum Guide 2020?",
+    "should_trigger": true
+  },
+  {
+    "query": "Кто имеет право отменить Sprint по Scrum Guide? Только PO или вся команда?",
+    "should_trigger": true
+  },
+  {
+    "query": "Чем Sprint Backlog отличается от Product Backlog по определению из Scrum Guide?",
+    "should_trigger": true
+  },
+  {
+    "query": "Какие пять ценностей Scrum? Как они связаны с эмпирическими столпами?",
+    "should_trigger": true
+  },
+  {
+    "query": "Что Scrum Guide говорит про sub-teams? Допустимы ли иерархии внутри Scrum Team?",
+    "should_trigger": true
+  },
+  {
+    "query": "Как определяется Definition of Done в Scrum Guide? Кто должен её создавать?",
+    "should_trigger": true
+  },
+  {
+    "query": "Процитируй из Scrum Guide, что именно входит в обязанности Developers",
+    "should_trigger": true
+  },
+  {
+    "query": "Наша velocity падает — проведи ретроспективу и предложи улучшения процесса",
+    "should_trigger": false
+  },
+  {
+    "query": "Реализуй PBI-42: добавь валидацию email в src/components/ProfileForm.tsx",
+    "should_trigger": false
+  },
+  {
+    "query": "Я хочу чтобы пользователь мог экспортировать результаты в PDF формат",
+    "should_trigger": false
+  },
+  {
+    "query": "Переупорядочь product_backlog.csv по бизнес-ценности — accessibility фичи должны быть выше",
+    "should_trigger": false
+  },
+  {
+    "query": "У нас impediment: CI занимает 40 минут, это блокирует delivery. Как устранить?",
+    "should_trigger": false
+  },
+  {
+    "query": "Заполни секцию Approach для PBI-18 — нужна decision matrix с тремя альтернативами",
+    "should_trigger": false
+  },
+  {
+    "query": "Обнови Definition of Done в pre-commit hooks — добавь a11y check",
+    "should_trigger": false
+  },
+  {
+    "query": "Добавь team agreement в CLAUDE.md: все PR ревьюятся в течение 4 часов",
+    "should_trigger": false
+  },
+  {
+    "query": "Напиши feature file для PBI-30 с acceptance criteria без привязки к UI",
+    "should_trigger": false
+  },
+  {
+    "query": "Почини баг: диаграмма не рендерится на Safari 17, ошибка в scale-viewer.ts:120",
+    "should_trigger": false
+  }
+]

@@ -204,14 +204,14 @@ Refinement is PO work. Per SG line 190, when the PO actively works on backlog it
 
 ## Board Commands
 
-- View tree: `uv run python product/board.py tree`
-- Start sprint: `uv run python product/board.py sprint start "<goal>"`
-- End sprint: `uv run python product/board.py sprint end`
-- Forecast: `uv run python product/board.py forecast`
-- Sprint check: `uv run python product/board.py sprint check`
-- Agent prompt: `uv run python product/board.py agent-prompt <pbi_id> <worktree-name>`
-- Assess effectiveness: `uv run python product/board.py assess <id> effective|ineffective`
-- Retro: `uv run python product/board.py retro`
+- View tree: `uv run python .claude/skills/scripts/board/board.py tree`
+- Start sprint: `uv run python .claude/skills/scripts/board/board.py sprint start "<goal>"`
+- End sprint: `uv run python .claude/skills/scripts/board/board.py sprint end`
+- Forecast: `uv run python .claude/skills/scripts/board/board.py forecast`
+- Sprint check: `uv run python .claude/skills/scripts/board/board.py sprint check`
+- Agent prompt: `uv run python .claude/skills/scripts/board/board.py agent-prompt <pbi_id> <worktree-name>`
+- Assess effectiveness: `uv run python .claude/skills/scripts/board/board.py assess <id> effective|ineffective`
+- Retro: `uv run python .claude/skills/scripts/board/board.py retro`
 
 ## Behavior
 

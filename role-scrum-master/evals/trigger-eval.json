@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Наша velocity упала с 15 до 8 за последние три спринта — нужно провести ретроспективу и найти причину",
+    "should_trigger": true
+  },
+  {
+    "query": "У нас impediment: CI pipeline падает из-за flaky тестов, блокирует весь delivery. Как устранить системно?",
+    "should_trigger": true
+  },
+  {
+    "query": "Обнови Definition of Done в pre-commit hooks — добавь accessibility audit как обязательный шаг",
+    "should_trigger": true
+  },
+  {
+    "query": "Разработчики не делают Daily Scrum и теряют синхронизацию — как наладить процесс?",
+    "should_trigger": true
+  },
+  {
+    "query": "Обнови секцию Git Workflow в CLAUDE.md — текущие правила не покрывают работу с worktrees",
+    "should_trigger": true
+  },
+  {
+    "query": "Sprint Review превращается в demo без обсуждения — как сделать его рабочей сессией?",
+    "should_trigger": true
+  },
+  {
+    "query": "PO и разработчики спорят кто должен делать sizing PBI — как разрулить по Scrum?",
+    "should_trigger": true
+  },
+  {
+    "query": "Наш процесс переключения ролей в CLAUDE.md запутанный, разработчики путают когда использовать какую роль",
+    "should_trigger": true
+  },
+  {
+    "query": "Команда не соблюдает timebox на Sprint Planning — уходит по 3 часа вместо одного. Что делать?",
+    "should_trigger": true
+  },
+  {
+    "query": "Нужно добавить team agreement: все PR должны быть reviewed в течение 4 часов. Закрепи в CLAUDE.md",
+    "should_trigger": true
+  },
+  {
+    "query": "Реализуй фичу экспорта в PDF — код должен быть в src/export/",
+    "should_trigger": false
+  },
+  {
+    "query": "Я хочу чтобы пользователь мог сохранять несколько профилей оценки",
+    "should_trigger": false
+  },
+  {
+    "query": "Что говорит Scrum Guide про Sprint Retrospective? Какой timebox и цель?",
+    "should_trigger": false
+  },
+  {
+    "query": "Переупорядочь бэклог — PBI-12 должен быть выше PBI-8 по приоритету",
+    "should_trigger": false
+  },
+  {
+    "query": "Заполни секцию Design для PBI-22 по issue template — нужен план имплементации",
+    "should_trigger": false
+  },
+  {
+    "query": "Добавь snapshot тест для компонента ScaleChart с тегом @visual",
+    "should_trigger": false
+  },
+  {
+    "query": "Сформулируй Product Goal — наш фокус на увеличение retention через улучшение UX",
+    "should_trigger": false
+  },
+  {
+    "query": "Как в Scrum Guide определяется Increment? Чем он отличается от Sprint Backlog?",
+    "should_trigger": false
+  },
+  {
+    "query": "Создай decision matrix для PBI-18: сравни подходы SVG vs Canvas по критериям",
+    "should_trigger": false
+  },
+  {
+    "query": "Напиши feature file для PBI-30 — acceptance criteria для истории изменений профиля",
+    "should_trigger": false
+  }
+]

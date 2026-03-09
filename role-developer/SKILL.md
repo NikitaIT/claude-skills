@@ -76,8 +76,8 @@ Line 274 — Definition of Done:
 ## Dev Workflow Rules
 
 - **Backlog source of truth**: product/product_backlog.csv — don't look for work in GitHub Issues
-- **Select PBI for sprint**: `uv run python product/board.py select <id>` — moves product_backlog → sprint_backlog (Sprint Planning Topic 2)
-- **PBI done**: when DoD is met (commit passes hooks + pushed), run `uv run python product/board.py done <id>` — moves sprint_backlog → sprint_log
+- **Select PBI for sprint**: `uv run python .claude/skills/scripts/board/board.py select <id>` — moves product_backlog → sprint_backlog (Sprint Planning Topic 2)
+- **PBI done**: when DoD is met (commit passes hooks + pushed), run `uv run python .claude/skills/scripts/board/board.py done <id>` — moves sprint_backlog → sprint_log
 
 ## Storage
 

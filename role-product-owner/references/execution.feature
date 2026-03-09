@@ -13,7 +13,7 @@ Feature: Sprint execution
     Scenario: PO proposes Sprint value
       Given the previous Sprint ended or this is the first Sprint
       When Sprint Planning begins
-      Then run `uv run python product/board.py forecast` to inspect past performance
+      Then run `uv run python .claude/skills/scripts/board/board.py forecast` to inspect past performance
       And propose a Sprint Goal that communicates why this Sprint is valuable
       And report the forecast and goal to the stakeholder
 
@@ -29,7 +29,7 @@ Feature: Sprint execution
     Scenario: Start the Sprint
       Given PBIs are selected
       When the Sprint Backlog is formed
-      Then start a sprint: `uv run python product/board.py sprint start "<goal>"`
+      Then start a sprint: `uv run python .claude/skills/scripts/board/board.py sprint start "<goal>"`
       And commit and push sprint start
 
   Rule: Topic Three — How will the chosen work get done? (Developers' sole discretion)
@@ -38,7 +38,7 @@ Feature: Sprint execution
       Given a sprint is started
       When preparing to spawn agents
       Then verify git status is clean — commit and push if needed
-      And run: uv run python product/board.py sprint check
+      And run: uv run python .claude/skills/scripts/board/board.py sprint check
       And do NOT spawn agents until all checks pass
 
     Scenario: Spawn developer agents (batch of up to 5)
@@ -47,7 +47,7 @@ Feature: Sprint execution
       Then run: .claude/skills/scripts/worktree-pool.sh init
       And take the next batch of up to 5 unstarted PBIs from the sprint
       And assign one worktree (dev-1..dev-5) per PBI
-      And generate prompt: uv run python product/board.py agent-prompt <pbi_id> <dev-N>
+      And generate prompt: uv run python .claude/skills/scripts/board/board.py agent-prompt <pbi_id> <dev-N>
       And spawn one Agent (subagent_type=general-purpose) per PBI with run_in_background=true
       But do NOT use isolation="worktree" — agents use pre-created worktrees
 
@@ -94,7 +94,7 @@ Feature: Sprint execution
       When the last batch finishes
       Then pull all changes: git pull --rebase origin main
       And verify: cat product/sprint_backlog.csv should be empty
-      And end the sprint: `uv run python product/board.py sprint end`
+      And end the sprint: `uv run python .claude/skills/scripts/board/board.py sprint end`
       And push (pre-push hook runs pnpm check automatically)
 
     # --- Sprint Retrospective (SG: "plan ways to increase quality and effectiveness") ---
@@ -104,7 +104,7 @@ Feature: Sprint execution
     Scenario: Sprint retrospective
       Given the sprint just ended and agent_log has metrics
       When the Sprint Review is complete
-      Then run `uv run python product/board.py retro`
+      Then run `uv run python .claude/skills/scripts/board/board.py retro`
       And identify ONE most impactful improvement for next sprint
       And if process change — update PO or Dev role
       And if code change — create a [process] PBI in the backlog

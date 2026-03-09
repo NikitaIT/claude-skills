@@ -68,12 +68,12 @@ You do NOT own the backlog ordering (PO) or architecture decisions (Developer).
 
 **Что SM делает сам:**
 
-- Переключение на роль через `Skill(/role:*)` с чётким описанием что и почему нужно изменить
+- Переключение на роль через `Skill(/role-*)` с чётким описанием что и почему нужно изменить
 
 **Что SM делегирует:**
 
-- Workflow/CLAUDE.md/код → Developer (`Skill(/role:developer)`)
-- Backlog ordering/Product Goal → PO (`Skill(/role:product-owner)`)
+- Workflow/CLAUDE.md/код → Developer (`Skill(/role-developer)`)
+- Backlog ordering/Product Goal → PO (`Skill(/role-product-owner)`)
 
 ## Data Sources
 

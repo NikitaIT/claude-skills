@@ -27,6 +27,7 @@ Claude Code auto-discovers skills from `.claude/skills/<name>/SKILL.md`.
 │   ├── check-modified.sh      # PreToolUse(Edit|Write): deny if externally modified
 │   └── update-hash-cache.sh   # PostToolUse(Edit|Write): track Claude's edits
 └── scripts/                   # Product management scripts
+    ├── board/                 # Scrum board CLI (board.py + schema.sql + tests)
     ├── worktree-pool.sh       # Manage 5 reusable worktrees for parallel agents
     └── lint-backlog-words.sh  # Lint backlog CSV for forbidden implementation words
 ```
