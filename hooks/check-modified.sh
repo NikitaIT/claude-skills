@@ -9,11 +9,7 @@ CACHE_DIR=".claude/.edit_hashes"
 mkdir -p "$CACHE_DIR"
 
 INPUT=$(cat)
-FILE_PATH=$(echo "$INPUT" | python3 -c "
-import sys, json
-d = json.load(sys.stdin)
-print(d.get('tool_input', {}).get('file_path', ''))
-" 2>/dev/null)
+FILE_PATH=$(echo "$INPUT" | grep -o '"file_path":"[^"]*"' | head -1 | cut -d'"' -f4)
 
 if [ -z "$FILE_PATH" ] || [ ! -f "$FILE_PATH" ]; then
   exit 0
