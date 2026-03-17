@@ -105,4 +105,4 @@ When multiple developers work on the same sprint in parallel:
 
 Project-specific notes are injected from `.claude/project-extensions/role-developer.md`:
 
-!`cat .claude/project-extensions/role-developer.md 2>/dev/null`
+!`cat .claude/project-extensions/role-developer.md 2>/dev/null || true`

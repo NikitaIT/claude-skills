@@ -243,4 +243,4 @@ When the stakeholder says "запускай спринт" or similar — run the
 
 ## Project-Specific Extensions
 
-!`cat .claude/project-extensions/role-product-owner.md 2>/dev/null`
+!`cat .claude/project-extensions/role-product-owner.md 2>/dev/null || true`

@@ -37,7 +37,7 @@ Claude Code auto-discovers skills from `.claude/skills/<name>/SKILL.md`.
 Role skills inject project-specific content at load time via:
 
 ```sh
-!`cat .claude/project-extensions/role-<name>.md 2>/dev/null`
+!`cat .claude/project-extensions/role-<name>.md 2>/dev/null || true`
 ```
 
 Create `.claude/project-extensions/` in your project to override or extend any role:

@@ -93,4 +93,4 @@ You do NOT own the backlog ordering (PO) or architecture decisions (Developer).
 
 Project-specific data sources are injected from `.claude/project-extensions/role-scrum-master.md`:
 
-!`cat .claude/project-extensions/role-scrum-master.md 2>/dev/null`
+!`cat .claude/project-extensions/role-scrum-master.md 2>/dev/null || true`
